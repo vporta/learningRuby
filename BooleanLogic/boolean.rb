@@ -35,18 +35,38 @@ puts odd_integer(3)
 
 
 def before_tarantula(string)
-  string = string.downcase
-  word = 'tarantula'
-
-    if cstring[0] != 'a'
-      return false
-    elsif string == 'tarantula'
-      return false
-    else
-      return true
-    end
+  tarantula = 'tarantula'
+  return value = tarantula <=> string
+  
+  if value == 0 
+    return false
+  elsif value == 1
+    return true
+  else 
+    return false 
   end
 
 end
 
-before_tarantula('dwwcw')
+puts before_tarantula('aarantula')
+
+
+# Define a method, #same_type? that accepts any two objects as arguments. Your method should return true if both objects are the same type (String, Fixnum, etc.). Otherwise, return false.
+
+#   same_type?(5, "abc")    # ==> false
+#   same_type?(5, 10)       # ==> true
+#   same_type?(5.0, 10)     # ==> false
+#   same_type?(true, false) # ==> false
+#   same_type?(nil, nil)    # ==> true
+
+def same_type(obj_one, obj_two)
+
+  if obj_one.class == obj_two.class
+    return true
+  else
+    return false
+  end
+
+end
+
+puts same_type(2, "owncown")

@@ -75,6 +75,10 @@
 for s in "a8".."b6"
   print s, ' '
 end
+# LOOPS
+string.split("").each do |i|
+  puts i
+end
 # 
 "hello".index('e')             #=> 1
 "hello".index('lo')            #=> 3
@@ -120,7 +124,7 @@ a.chr    #=> "a"
 # 
 "hii".to_sym
 => :hii
-[63] pry(main)> "hii".to_s
+"hii".to_s
 => "hii"
 # 
 "hii".inspect

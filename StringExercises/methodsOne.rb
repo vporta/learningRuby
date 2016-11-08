@@ -32,3 +32,5 @@ c.count "X-\\w"                #=> 3
 
 "stressed".reverse   #=> "desserts"
 
+"a".upto("z") {|s| print s, ' ' }
+
