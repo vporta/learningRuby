@@ -29,12 +29,12 @@ require 'byebug'
 def first_n_evens(n)
   arr = [0]
   i = 1
-  ps = 0
+  evens = 0
 
   while i < n
 
     i+=1
-    arr << ps+=2
+    arr << evens+=2
 
   end
 
@@ -88,6 +88,34 @@ rotate([4, 5, 6, 7], 3)
 
 #   all_uniqs([1, 2, 3], [1, 2, 4]) # ==> [3, 4]
 #   all_uniqs([1, 2, 7], [1, 3, 8]) # ==> [2, 7, 3, 8]
+
+
+def all_uniqs(array1, array2)
+  
+  i = 0
+  j = 0
+  new_array = []
+
+  while i < array1.length
+
+    while j < array2.length
+
+      if array1[i] != array2[j]
+
+        new_array << array1[i] 
+        new_array << array2[j]
+
+      end
+
+      i+=1
+      j+=1
+     
+    end
+  end
+  p new_array
+end
+
+all_uniqs([1, 2, 7], [1, 3, 8])
 
 
 

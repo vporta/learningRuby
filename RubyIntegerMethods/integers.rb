@@ -1,4 +1,4 @@
-[:integer?, 
+integer?, 
  :odd?,
  :even?,
  :upto,
