@@ -168,6 +168,7 @@ a.eql?(10)
 4783740.real?
 => true
 # 
+['1', '4'].map {|i| Integer(i) } # converts array of string, to an array of integers
 
 
 
