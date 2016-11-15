@@ -78,7 +78,7 @@ puts slippery_numbers(7) == [3, 5, 6, 9, 10, 12, 18]
 
 # # Write a function that finds whether any two elements in the array sum to 0. If it does, return true; else, return false.
 def two_sum_to_zero?(array)
-  array = array.combination(2).to_a
+  array = array.combination(2).to_a [[4,3], [5,3]]
   array.each do |x|
     if x.reduce(:+) == 0
       p x

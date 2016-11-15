@@ -233,18 +233,18 @@ puts longest_word("go steph go") == "steph"
 # *********************************************
 
 # Write a method that will take a list of names and return a hash of first initials and the number of times they appear.
-# def count_initials(names)
-#   hasher = Hash.new(0)
-#   names.each do |el|
-#     hasher[el[0]] += 1 
-#   end  
-#   p hasher
-# end
+def count_initials(names)
+  hasher = Hash.new(0)
+  names.each do |el|
+    hasher[el[0]] += 1 
+  end  
+  p hasher
+end
 
-# #Tests
-# puts "\nCount Initials:\n" + "*" * 15 + "\n"
-# dubs = ["Steph", "Harrison", "Klay", "Andrew", "Andre", "Draymond", "Shaun"]
-# puts count_initials(dubs) == { "S" => 2, "H" => 1, "K" => 1, "D" => 1, "A" => 2 }
+#Tests
+puts "\nCount Initials:\n" + "*" * 15 + "\n"
+dubs = ["Steph", "Harrison", "Klay", "Andrew", "Andre", "Draymond", "Shaun"]
+puts count_initials(dubs) == { "S" => 2, "H" => 1, "K" => 1, "D" => 1, "A" => 2 }
 
 # *********************************************
 

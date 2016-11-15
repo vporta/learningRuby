@@ -1,4 +1,4 @@
-# You have 100 cats.
+w# You have 100 cats.
 #
 # Your rules are simple: 
 
