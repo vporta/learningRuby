@@ -75,7 +75,7 @@ puts ordered_vowels(["firefox", "chrome", "safari", "netscape", "aeiou"]) == ["s
 
 # ************************************
 # Write a function that takes two years and returns all the years within that range with no repeated digits.
-# Hint: helper method?
+# Hint: help er method?
 # no_repeat_years(2010,2015) -> [2013,2014,2015]
 
 def no_repeat_years(first_year, last_year)
@@ -102,6 +102,27 @@ puts no_repeat_years(2016, 2020) == [2016, 2017, 2018, 2019]
 # Use a hash within your method to keep track of the letter counts.  You will need to account for spaces.  There are a few ways you can do this.
 
 def most_frequent_letter(string)
+  sum = 0 
+  hasher = Hash.new(0)
+  idx = 0 
+  letters = string.split("")
+  trimed_letter_array = letters.delete_if {|x| x == ' ' } 
+  current_best_val = nil
+  current_best_key = nil
+
+  while idx < trimed_letter_array.length
+    hasher[trimed_letter_array[idx]]+=1
+    idx+=1
+  end
+  
+  hasher.each do |key, val| # Iterator to find the largest value
+    if current_best_val.nil? || val > current_best_val 
+      current_best_val = val
+      current_best_key = key
+    end
+  end
+  print current_best_key
+ 
 end
 
 puts "\nMost Frequent Letter\n" + "*" * 15 + "\n"

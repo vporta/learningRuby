@@ -43,19 +43,26 @@ puts long_word_count("two reallylong words inthisstring") == 2
 # Assume all numbers are included as part of a range (no stand alone elements).
 
 def range_summary(array)
-  array = array.sort!.uniq
-  arr = []
+  outer_array = []
   hold_ranges = []
   array.each_with_index do |el, idx| 
-    next_element = array[idx] + 1
-    current_element = array[idx]
-    if next_element - current_element == 1 
-      arr << array[idx]
-    elsif next_element - current_element > 1 
-      
+    if hold_ranges.empty?
+      hold_ranges << el
+    elsif end_of_range?(idx, array)
+      hold_ranges << el
+      outer_array << hold_ranges
+      hold_ranges = [] 
     end
   end
-  p arr
+  outer_array
+end
+
+def end_of_range?(idx, array)
+  if idx == array.length - 1
+    return true
+  else
+    array[idx] != array[idx + 1] - 1
+  end
 end
 
 puts "-------Range Summary-------"
@@ -69,15 +76,21 @@ puts range_summary([0, 1, 2, 3, 4, 5, 7, 8, 9, 15, 16]) == [[0, 5], [7, 9], [15,
 # in the original string and return the updated cool string with hashtags.
 
 def hashtagify(sentence, tags)
-  sentence = sentence.downcase.split(" ")
+  sentence = sentence.split(" ")
+  
   tags.each_with_index do |el, idx|
+    
     sentence.each_with_index do |word, jdx|
-      if tags[idx] == sentence[jdx]
-        print " ##{sentence[jdx]}"
-        sentence[jdx]
+      
+      if sentence[jdx].downcase.include? tags[idx].downcase
+
+        sentence[jdx] = "#" + sentence[jdx]
       end
+        sentence
     end
+  
   end
+ sentence.join(" ")
 end
 
 puts "-------Hashtagify-------"

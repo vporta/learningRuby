@@ -36,8 +36,11 @@ def range_summary(array)
 end
 
 def end_of_range?(idx, array)
-  return true if idx == array.length - 1
-  array[idx] != array[idx + 1] - 1
+  if idx == array.length - 1
+    return true 
+  else
+    array[idx] != array[idx + 1] - 1
+  end
 end
 
 
@@ -51,7 +54,9 @@ def hashtagify(sentence, tags)
   temp = sentence.split
 
   temp.map! do |word|
-    if tags.any? { |tag| word.downcase.include?(tag) }
+    if tags.any? { |tag| 
+      word.downcase.include?(tag) 
+    }
       "#" + word
     else
       word
