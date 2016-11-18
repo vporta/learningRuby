@@ -121,8 +121,7 @@ def most_frequent_letter(string)
       current_best_key = key
     end
   end
-  print current_best_key
- 
+  current_best_key
 end
 
 puts "\nMost Frequent Letter\n" + "*" * 15 + "\n"
@@ -132,10 +131,16 @@ puts most_frequent_letter("we the people in order to form a more perfect union")
 
 
 # ************************************
-# Write a method that takes a string of lower case words (no punctuation) and returns an array of letters that occur more
-# than once.  We'll need to account for spaces, too.  Again, there are a few ways you can do this.
+# Write a method that takes a string of lower case words (no punctuation) and returns an array of letters that occur more than once.  We'll need to account for spaces, too.  Again, there are a few ways you can do this.
 
 def non_unique_letters(string)
+  to_arr = string.split("")
+  to_arr = to_arr.delete_if { |e| e == " " }
+  new_arr = []
+  to_arr.each_with_index do |letter, idx|
+    print letter
+  end
+  # print new_arr
 end
 
 puts "\nNon-Unique Letters\n" + "*" * 15 + "\n"

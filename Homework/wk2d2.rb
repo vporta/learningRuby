@@ -22,4 +22,27 @@ puts hipsterfy("mstrkrft") == "mstrkrft"
 puts hipsterfy("towel flicker banana") == "towl flickr banan"
 puts hipsterfy("turtle cheeseburger fries") == "turtl cheeseburgr fris"
 
+def hipsterfy(sentence) 
+  words = sentence.split(" ")
+  result_array = []
+  words.each { |word| result_array << remove_last_vowel(word)}
+  result.join(" ")
+end
+
+def is_vowel?(char)
+  %w{a e i o u}.include?(char)
+end
+
+def remove_last_vowel(word)
+  i = word.length - 1
+  while i >= 0 do
+    if is_vowel?(word[i])
+      word.slice!(i)
+      break
+    end
+    i-=1
+  end
+  word
+end
+
 
