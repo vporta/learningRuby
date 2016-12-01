@@ -134,13 +134,15 @@ puts most_frequent_letter("we the people in order to form a more perfect union")
 # Write a method that takes a string of lower case words (no punctuation) and returns an array of letters that occur more than once.  We'll need to account for spaces, too.  Again, there are a few ways you can do this.
 
 def non_unique_letters(string)
-  to_arr = string.split("")
-  to_arr = to_arr.delete_if { |e| e == " " }
-  new_arr = []
-  to_arr.each_with_index do |letter, idx|
-    print letter
+  counts = Hash.new(0)
+  string.chars.each do |character|
+    counts[character] += 1 unless character == " "
   end
-  # print new_arr
+  non_uniques = []
+  counts.each do |letter, count|
+    non_uniques << letter if count > 1
+  end
+  non_uniques
 end
 
 puts "\nNon-Unique Letters\n" + "*" * 15 + "\n"
@@ -156,6 +158,7 @@ puts non_unique_letters("aaa bbb c d eee") == ["a", "b", "e"]
 # We'll need to account for spaces, too.  Again, there are a few ways you can do this.
 
 def missing_letters(string)
+
 end
 
 puts "\nMissing Letters\n" + "*" * 15 + "\n"
